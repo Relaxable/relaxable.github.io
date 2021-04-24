@@ -1,7 +1,10 @@
-/*#region z-indexes*/
+/*#region variables*/
 
 :root {
     --z-index-menu: 100;
+
+    --nav-margin: min(4vmin, 20px);
+    --nav-height: calc(var(--nav-margin) * 9);
 }
 
 /*endregion*/
@@ -28,8 +31,8 @@ a {
     position: relative;
     z-index: var(--z-index-menu);
 
-    width: 8vmin;
-    height: 8vmin;
+    width: calc(var(--nav-margin) * 2);
+    height: calc(var(--nav-margin) * 2);
     cursor: pointer;
 }
 
@@ -65,8 +68,9 @@ a {
 nav {
     position: fixed;
     top: 0;
-    left: 0;
-    height: 36vmin;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: var(--nav-height);
     width: 100%;
     transition: 500ms;
 
@@ -79,12 +83,13 @@ nav {
 nav:before {
     position: absolute;
     content: '';
-    top: 4vmin;
-    left: 4vmin;
-    width: calc(100% - 8vmin);
-    height: calc(100% - 8vmin);
-    background: rgba(0, 0, 0, 0.9);
-    border-radius: 15px;
+    top: var(--nav-margin);
+    left: var(--nav-margin);
+    width: calc(100% - calc(var(--nav-margin) * 2));
+    height: calc(100% - calc(var(--nav-margin) * 2));
+    background: rgba(22, 21, 22.5, 0.95);
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
     transition: 500ms;
 }
 
@@ -94,26 +99,21 @@ nav:before {
     width: 100%;
     height: 100%;
     border-radius: 0;
+    background: rgba(22, 21, 22.5, 1);
 }
 
 .nav-visible {
-    --links: 6;
     height: 100%;
-
-    top: 0;
-    left: 0;
-    width: 100%;
     border-radius: 0;
 }
 
 nav header {
     box-sizing: border-box;
     position: relative;
-    left: 10vmin;
-    width: calc(100% - 20vmin);
-    height: 60%;
-    max-height: calc(30vmin * 0.6);
-    top: 9vmin;
+    left: calc(var(--nav-margin) * 2);
+    width: calc(100% - var(--nav-margin) * 4);
+    height: calc(var(--nav-height) - var(--nav-margin) * 4);
+    top: calc(var(--nav-margin) * 2);
     transition: 500ms;
 
     display: flex;
@@ -121,7 +121,7 @@ nav header {
     justify-content: space-between;
 
     font-weight: 100;
-    font-size: 9vmin;
+    font-size: min(9vmin, 46px);
 }
 
 nav header > span {
@@ -144,7 +144,7 @@ nav header img {
 
 #nav-links {
     visibility: hidden;
-    margin-top: 16vmin;
+    margin-top: calc(var(--nav-margin) * 3);
     opacity: 0;
     transition: 500ms;
     transform: translate(0, -10vmin);
@@ -215,16 +215,40 @@ nav header img {
 
 @supports (backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px)) {
     nav:before {
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(22, 21, 22.5, 0.8);
 
-        --backdrop-filter: blur(10px);
+        --backdrop-filter: blur(8px);
         backdrop-filter: var(--backdrop-filter);
         -webkit-backdrop-filter: var(--backdrop-filter);
+    }
+
+    .nav-visible:before {
+        background: rgba(22, 21, 22.5, 0.8);
     }
 }
 
 @media only screen and (min-width: 700px) {
+    nav {
+        width: min(100%, 600px);
+    }
 
+    .nav-visible {
+        height: 482px;
+        width: min(100%, 600px);
+    }
+
+    .nav-visible:before {
+        top: var(--nav-margin);
+        left: var(--nav-margin);
+        width: calc(100% - calc(var(--nav-margin) * 2));
+        height: calc(100% - calc(var(--nav-margin) * 2));
+        border-radius: 16px;
+    }
+
+    .nav-visible #nav-links a {
+        margin-left: var(--nav-margin);
+        width: calc(100% - var(--nav-margin) * 2)
+    }
 }
 
 /*#endregion*/
