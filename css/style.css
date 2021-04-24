@@ -37,7 +37,7 @@ a {
     position: absolute;
     width: 100%;
     height: 10%;
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(222, 222, 222, 1);
     transition: 400ms;
 }
 
@@ -64,18 +64,36 @@ a {
 
 nav {
     position: fixed;
-    top: 4vmin;
-    left: 4vmin;
-    height: 30vmin;
-    width: calc(100% - 8vmin);
-    background: rgba(0, 0, 0, 0.9);
+    top: 0;
+    left: 0;
+    height: 36vmin;
+    width: 100%;
     transition: 500ms;
-    border-radius: 15px;
 
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+nav:before {
+    position: absolute;
+    content: '';
+    top: 4vmin;
+    left: 4vmin;
+    width: calc(100% - 8vmin);
+    height: calc(100% - 8vmin);
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 15px;
+    transition: 500ms;
+}
+
+.nav-visible:before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
 }
 
 .nav-visible {
@@ -91,11 +109,11 @@ nav {
 nav header {
     box-sizing: border-box;
     position: relative;
-    left: 6vmin;
-    width: calc(100% - 12vmin);
+    left: 10vmin;
+    width: calc(100% - 20vmin);
     height: 60%;
     max-height: calc(30vmin * 0.6);
-    top: 6vmin;
+    top: 9vmin;
     transition: 500ms;
 
     display: flex;
@@ -104,12 +122,6 @@ nav header {
 
     font-weight: 100;
     font-size: 9vmin;
-}
-
-.nav-visible header {
-    top: 10vmin;
-    left: 10vmin;
-    width: calc(100% - 20vmin);
 }
 
 nav header > span {
@@ -202,7 +214,7 @@ nav header img {
 }
 
 @supports (backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px)) {
-    nav {
+    nav:before {
         background: rgba(0, 0, 0, 0.5);
 
         --backdrop-filter: blur(10px);
