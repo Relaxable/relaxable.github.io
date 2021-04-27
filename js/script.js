@@ -9,6 +9,7 @@ $(function () {
         });
 
         $(this).parent("header").parent("nav").toggleClass("nav-visible");
+        $('html,body').toggleClass("root-noscroll");
     });
 
 

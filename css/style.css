@@ -20,6 +20,10 @@ html, body {
     color: white;
 }
 
+.root-noscroll {
+    overflow: hidden;
+}
+
 a {
     color: white;
     text-decoration: none;
@@ -232,6 +236,10 @@ nav header img {
 }
 
 @media only screen and (min-width: 700px) {
+    .root-noscroll {
+        overflow: initial;
+    }
+
     nav {
         width: min(100%, 600px);
     }
@@ -266,7 +274,7 @@ main {
     padding-top: 30vmin;
 }
 
-*{
+* {
     box-sizing: border-box;
 }
 
@@ -327,14 +335,14 @@ main {
 
 /*#region Quick links*/
 
-#quick-links{
+#quick-links {
     display: flex;
     flex-wrap: wrap;
     padding: 70px 0;
     justify-content: center;
 }
 
-#quick-links a{
+#quick-links a {
     position: relative;
     font-size: 18px;
     white-space: nowrap;
@@ -344,9 +352,10 @@ main {
     font-weight: 300;
     text-align: center;
 }
-#quick-links a:before, #quick-links a:after{
+
+#quick-links a:before, #quick-links a:after {
     position: absolute;
-    content:'';
+    content: '';
     left: 0;
     top: 0;
     width: 100%;
@@ -354,15 +363,16 @@ main {
     box-shadow: 0 0 0 1px white;
     transition: 200ms;
 }
-#quick-links a:hover:before{
+
+#quick-links a:hover:before {
     transform: translate(2px, 2px);
 }
 
-#quick-links a:hover:after{
+#quick-links a:hover:after {
     transform: translate(-2px, -2px);
 }
 
-#quick-links a:active:before, #quick-links a:active:after{
+#quick-links a:active:before, #quick-links a:active:after {
     transition: 0ms;
 }
 
