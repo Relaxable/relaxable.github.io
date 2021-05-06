@@ -363,6 +363,7 @@ nav header img {
     flex-wrap: wrap;
     padding: 70px 0;
     justify-content: center;
+    max-width: 400px;
 }
 
 #quick-links a {
@@ -386,6 +387,12 @@ nav header img {
 
 #quick-links a:active:before, #quick-links a:active:after {
     transition: 0ms;
+}
+
+@media only screen and (min-width: 870px) {
+    #quick-links{
+        max-width: 100%;
+    }
 }
 
 /*endregion*/
@@ -416,35 +423,49 @@ nav header img {
     font-size: 18px;
 }
 
+#support a:hover img, #follow a:hover img {
+    filter: brightness(150%);
+    transition: 150ms;
+}
+
 #support img, #follow img {
     max-height: 100%;
     max-width: 100%;
-    transform: scale(0.7);
+    transform: scale(0.65);
+    transition: 800ms;
+}
+
+#support a:nth-child(2) img {
+    transform: scale(0.7) translate(8px, 0px);
+}
+
+#support a:nth-child(3) img {
+    transform: scale(0.6);
 }
 
 /*#endregion*/
 
 /*#region Follow*/
 
-#follow{
-    padding-bottom: 80px;
+#follow {
+    padding-bottom: 30px;
 }
 
-#follow a{
+#follow a {
     position: relative;
     display: inline-block;
     width: 64px;
     height: 64px;
-    margin: 0 16px;
+    margin: 0 8px;
 }
 
 #follow h2 {
     position: relative;
-    margin: 38px 0 28px 0;
+    margin: 38px 0 22px 0;
     padding-top: 32px;
 }
 
-#follow h2:before{
+#follow h2:before {
     z-index: -1;
     position: absolute;
     content: '';
@@ -455,6 +476,14 @@ nav header img {
     top: 0;
     left: 50%;
     transform: translate(-50%, 0);
+}
+
+#follow a:nth-child(3) img {
+    transform: scale(0.60);
+}
+
+#follow a:nth-child(4) img {
+    transform: scale(0.62);
 }
 
 /*#endregion*/
