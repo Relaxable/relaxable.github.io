@@ -1,0 +1,146 @@
+:root {
+    --sel-image: transparent;
+    --z-index-viewer: 10000;
+}
+
+#img-viewer {
+    z-index: var(--z-index-viewer);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    animation-name: ShowViewer;
+    animation-fill-mode: both;
+    animation-duration: 1000ms;
+}
+
+.img-viewer-visible {
+    display: flex !important;
+}
+
+#img-viewer:before, #img-viewer:after {
+    z-index: calc(var(--z-index-viewer) - 2);
+    position: absolute;
+    content: '';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+#img-viewer:before {
+    background: var(--sel-image);
+    background-size: cover;
+    background-position: center;
+    filter: brightness(20%);
+}
+
+#img-viewer:after {
+    z-index: calc(var(--z-index-viewer) - 1);
+}
+
+@supports (backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px)) {
+    #img-viewer:before {
+        filter: brightness(50%);
+    }
+
+    #img-viewer:after {
+        --backdrop-filter: blur(24px);
+        backdrop-filter: var(--backdrop-filter);
+        -webkit-backdrop-filter: var(--backdrop-filter);
+    }
+}
+
+#iv-container, #iv-image {
+    z-index: calc(var(--z-index-viewer) + 1);
+    position: relative;
+    width: min(100%, 1600px);
+    height: min(100%, 1000px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#iv-image {
+    width: min(100%, 1200px);
+    height: 100%;
+}
+
+#iv-image img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#iv-back, #iv-forward, #iv-close {
+    z-index: calc(var(--z-index-viewer) + 2);
+    position: absolute;
+    content: '';
+    left: min(4vmin, 25px);
+    top: 50%;
+    transform: translate(0, -50%);
+    width: min(20vw, 100px);
+    height: min(20vw, 100px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#iv-forward, #iv-close {
+    left: auto;
+    right: min(4vmin, 25px);
+}
+
+#iv-close {
+    top: min(4vmin, 25px);
+    transform: translate(0);
+}
+
+#iv-back:hover, #iv-forward:hover, #iv-close:hover {
+    cursor: pointer;
+}
+
+#iv-back img, #iv-forward img, #iv-close img {
+    opacity: 0.6;
+    transition: 800ms;
+}
+
+#iv-back:hover > img, #iv-forward:hover > img, #iv-close:hover > img {
+    opacity: 1;
+    transition: 150ms;
+}
+
+#iv-forward img {
+    transform: rotate(180deg);
+}
+
+.iv-button:before, #iv-close:before {
+    z-index: -1;
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 100%;
+    box-shadow: inset 0 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes ShowViewer {
+    0% {
+        opacity: 0;
+        transform: scale(1.15);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
