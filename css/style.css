@@ -314,10 +314,16 @@ nav header img {
 .picture-container {
     position: relative;
     width: var(--picture-dimensions);
+    overflow: hidden;
 }
 
 .picture-container > svg {
     width: 100%;
+}
+
+.picture-container:hover picture {
+    transform: scale(1.08);
+    cursor: pointer;
 }
 
 #showcase picture {
@@ -327,6 +333,7 @@ nav header img {
     bottom: 0;
     left: 0;
     right: 0;
+    transition: 500ms;
 }
 
 #showcase picture img {
