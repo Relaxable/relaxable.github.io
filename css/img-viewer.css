@@ -35,7 +35,7 @@
 }
 
 #img-viewer:before {
-    background: var(--sel-image);
+    background: rgb(43, 43, 43) var(--sel-image);
     background-size: cover;
     background-position: center;
     filter: brightness(20%);
@@ -47,7 +47,7 @@
 
 @supports (backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px)) {
     #img-viewer:before {
-        filter: brightness(50%);
+        filter: brightness(60%);
     }
 
     #img-viewer:after {
