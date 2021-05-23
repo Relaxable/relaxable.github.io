@@ -1,3 +1,63 @@
 #nav-home {
     font-weight: bold;
 }
+
+/*#region Art*/
+
+#showcase {
+    width: min(100%, 1400px);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.picture-container {
+    position: relative;
+    width: var(--picture-dimensions);
+    overflow: hidden;
+}
+
+.picture-container > svg {
+    width: 100%;
+}
+
+.picture-container:hover picture {
+    transform: scale(1.08);
+    cursor: pointer;
+}
+
+#showcase picture {
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: 500ms;
+}
+
+#showcase picture img {
+    display: block;
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+}
+
+@media only screen and (min-width: 400px) {
+    :root {
+        --picture-dimensions: calc(100% / 3);
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    :root {
+        --picture-dimensions: calc(100% / 4);
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    :root {
+        --picture-dimensions: calc(100% / 5);
+    }
+}
+
+/*#endregion*/
