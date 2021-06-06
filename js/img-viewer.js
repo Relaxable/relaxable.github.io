@@ -1,7 +1,8 @@
 class ImgViewer {
-    constructor(container, pictureContainer) {
+    constructor(container, pictureContainer, imgCount) {
         this._container = container;
         this._pictureContainer = pictureContainer;
+        this._imgCount = imgCount;
     }
 
     show(selIndex) {
@@ -11,7 +12,7 @@ class ImgViewer {
     }
 
     nav(back = false) {
-        this._selIndex = (back ? this._selIndex -= 1 : this._selIndex += 1);
+        this._selIndex = this._getIndex(back);
         this._showImage()
     }
 
@@ -20,18 +21,28 @@ class ImgViewer {
     }
 
     _showImage() {
-        let image = this._container.children(this._pictureContainer).eq(this._selIndex).find("img").prop("src");
+        let image = this._container.find(this._pictureContainer).eq(this._selIndex).find("img").prop("src");
         $("#iv-image").html(`<img src="${image}" alt="Image"/>`);
         document.documentElement.style.setProperty('--sel-image', `url(${image}`);
+    }
+
+    _getIndex(back = false) {
+        if (back) {
+            return ((this._selIndex - 1) < 0 ? this._imgCount - 1 : this._selIndex - 1);
+        }
+        else{
+            return ((this._selIndex + 1) > this._imgCount - 1 ? 0 : this._selIndex + 1);
+        }
     }
 }
 
 $(function () {
 
-    let vi = new ImgViewer($("#showcase"), $(".picture-container"));
+    let imgCount = $("#showcase .picture-container").length;
+    let vi = new ImgViewer($("#showcase"), $(".picture-container"), imgCount);
 
     $('.picture-container').on("click", function () {
-        let i = $(this).index();
+        let i = $(this).parent().find($('.picture-container')).index(this);
         vi.show(i);
     });
 
