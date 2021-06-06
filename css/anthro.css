@@ -1,0 +1,75 @@
+html, body {
+    overflow-x: hidden;
+}
+
+#nav-anthro {
+    font-weight: bold;
+}
+
+.loading {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    display: grid;
+}
+
+.loading img {
+    width: 60px;
+    margin-bottom: 12px;
+    filter: invert(100%);
+
+    animation-name: RotateLoadingIcon;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+}
+
+.art-wall {
+    position: relative;
+    display: none;
+    width: 100%;
+}
+
+.art {
+    opacity: 0;
+    font-size: 0;
+    width: min(50%, 400px);
+
+    animation-name: ShowArtWall;
+    animation-fill-mode: both;
+    animation-duration: 1000ms;
+}
+
+.art picture, .art picture img {
+    width: 100%;
+}
+
+@keyframes RotateLoadingIcon {
+    0% {
+        transform: rotate(0deg);
+    }
+    8% {
+        transform: rotate(-20deg);
+    }
+    35% {
+        transform: rotate(380deg);
+    }
+    55% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes ShowArtWall {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

@@ -2,11 +2,175 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/img-viewer.css">
+    <link rel="stylesheet" type="text/css" href="../css/anthro.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <!--<link rel="manifest" href="../site.webmanifest">-->
+    <link rel="mask-icon" href="../safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#ff0000">
+    <meta name="theme-color" content="#ff9caf">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../js/img-viewer.js"></script>
+    <script src="../js/masonry.js"></script>
 
     <title>Anthropomorphic art — Relaxable</title>
 </head>
 <body>
+
+<nav>
+    <header>
+        <img src="../img/avatar.png" alt="Avatar"/>
+        <span>Relaxable</span>
+        <div id="hamburger-button">
+            <span class="ham" id="ham-1"></span>
+            <span class="ham" id="ham-2"></span>
+            <span class="ham" id="ham-3"></span>
+        </div>
+    </header>
+    <div id="nav-links">
+        <a id="nav-home" href="../">home</a>
+        <a id="nav-anthro" href="../anthro">anthropomorphic art</a>
+        <a id="nav-art" href="../art">other art</a>
+        <a id="nav-pricing" href="../pricing">pricing</a>
+        <a id="nav-terms" href="../data/Relaxable_Commissions_Terms.pdf">terms and conditions</a>
+        <a id="nav-contact" href="../anthro">contact</a>
+    </div>
+</nav>
+
+<main>
+    <h1>Anthropomorphic Art</h1>
+
+    <section class="loading">
+        <img src="../safari-pinned-tab.svg" alt="Avatar">
+        Loading...</section>
+    <section class="art-wall">
+        <div class="art">
+            <picture>
+                <!--<source srcset="img/image.webp" type="image/webp">-->
+                <source srcset="../img/estelle-pechuzal-ocean.jpg" type="image/jpeg">
+                <img src="../img/estelle-pechuzal-ocean.jpg" alt="Relaxable">
+            </picture>
+        </div>
+        <div class="art">
+            <picture>
+                <!--<source srcset="img/image.webp" type="image/webp">-->
+                <source srcset="../img/estelle-pechuzal-dragon.jpg" type="image/jpeg">
+                <img src="../img/estelle-pechuzal-dragon.jpg" alt="Relaxable">
+            </picture>
+        </div>
+        <div class="art">
+            <picture>
+                <!--<source srcset="img/image.webp" type="image/webp">-->
+                <source srcset="../img/estelle-pechuzal-untitled-3.jpg" type="image/jpeg">
+                <img src="../img/estelle-pechuzal-untitled-3.jpg" alt="Relaxable">
+            </picture>
+        </div>
+        <div class="art">
+            <picture>
+                <!--<source srcset="img/image.webp" type="image/webp">-->
+                <source srcset="../img/estelle-pechuzal-forest.jpg" type="image/jpeg">
+                <img src="../img/estelle-pechuzal-forest.jpg" alt="Relaxable">
+            </picture>
+        </div>
+        <div class="art">
+            <picture>
+                <!--<source srcset="img/image.webp" type="image/webp">-->
+                <source srcset="../test/Fullyrenderedportrait/ShesTheOne.png" type="image/jpeg">
+                <img src="../test/Fullyrenderedportrait/ShesTheOne.png" alt="Relaxable">
+            </picture>
+        </div>
+        <div class="art">
+            <picture>
+                <!--<source srcset="img/image.webp" type="image/webp">-->
+                <source srcset="../test/Fullyrenderedportrait/Intrigued.png" type="image/jpeg">
+                <img src="../test/Fullyrenderedportrait/Intrigued.png" alt="Relaxable">
+            </picture>
+        </div>
+        <div class="art">
+            <picture>
+                <!--<source srcset="img/image.webp" type="image/webp">-->
+                <source srcset="../test/Fullyrenderedportrait/Gazelle.png" type="image/jpeg">
+                <img src="../test/Fullyrenderedportrait/Gazelle.png" alt="Relaxable">
+            </picture>
+        </div>
+        <div class="art">
+            <picture>
+                <!--<source srcset="img/image.webp" type="image/webp">-->
+                <source srcset="../test/Fullyrenderedportrait/Cider.png" type="image/jpeg">
+                <img src="../test/Fullyrenderedportrait/Cider.png" alt="Relaxable">
+            </picture>
+        </div>
+        <div class="art">
+            <picture>
+                <!--<source srcset="img/image.webp" type="image/webp">-->
+                <source srcset="../test/Fullyrenderedillustration/Train.png" type="image/png">
+                <img src="../test/Fullyrenderedillustration/Train.png" alt="Relaxable">
+            </picture>
+        </div>
+        <div class="art">
+            <picture>
+                <!--<source srcset="img/image.webp" type="image/webp">-->
+                <source srcset="../test/Fullyrenderedillustration/Stroll.png" type="image/png">
+                <img src="../test/Fullyrenderedillustration/Stroll.png" alt="Relaxable">
+            </picture>
+        </div>
+        <div class="art">
+            <picture>
+                <!--<source srcset="img/image.webp" type="image/webp">-->
+                <source srcset="../test/Fullyrenderedillustration/Artgang.png" type="image/png">
+                <img src="../test/Fullyrenderedillustration/Artgang.png" alt="Relaxable">
+            </picture>
+        </div>
+        <div class="art">
+            <picture>
+                <!--<source srcset="img/image.webp" type="image/webp">-->
+                <source srcset="../test/Fullyrenderedillustration/Rikkiwm.png" type="image/png">
+                <img src="../test/Fullyrenderedillustration/Rikkiwm.png" alt="Relaxable">
+            </picture>
+        </div>
+        <div class="art">
+            <picture>
+                <!--<source srcset="img/image.webp" type="image/webp">-->
+                <source srcset="../test/Characterrender/Vintage.png" type="image/png">
+                <img src="../test/Characterrender/Vintage.png" alt="Relaxable">
+            </picture>
+        </div>
+        <div class="art">
+            <picture>
+                <!--<source srcset="img/image.webp" type="image/webp">-->
+                <source srcset="../test/Characterrender/Sleepybun.png" type="image/png">
+                <img src="../test/Characterrender/Sleepybun.png" alt="Relaxable">
+            </picture>
+        </div>
+        <div class="art">
+            <picture>
+                <!--<source srcset="img/image.webp" type="image/webp">-->
+                <source srcset="../test/Characterrender/MrMrsWilde.jpg" type="image/png">
+                <img src="../test/Characterrender/MrMrsWilde.jpg" alt="Relaxable">
+            </picture>
+        </div>
+        <div class="art">
+            <picture>
+                <!--<source srcset="img/image.webp" type="image/webp">-->
+                <source srcset="../test/Characterrender/Fancy.png" type="image/png">
+                <img src="../test/Characterrender/Fancy.png" alt="Relaxable">
+            </picture>
+        </div>
+    </section>
+</main>
 
 </body>
 </html>
