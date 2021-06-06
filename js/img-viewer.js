@@ -29,8 +29,7 @@ class ImgViewer {
     _getIndex(back = false) {
         if (back) {
             return ((this._selIndex - 1) < 0 ? this._imgCount - 1 : this._selIndex - 1);
-        }
-        else{
+        } else {
             return ((this._selIndex + 1) > this._imgCount - 1 ? 0 : this._selIndex + 1);
         }
     }
@@ -38,7 +37,7 @@ class ImgViewer {
 
 $(function () {
 
-    let imgCount = $("#showcase .picture-container").length;
+    let imgCount = $(".showcase .picture-container").length;
     let vi = new ImgViewer($("#showcase"), $(".picture-container"), imgCount);
 
     $('.picture-container').on("click", function () {

@@ -4,7 +4,7 @@
 
 /*#region Art*/
 
-#showcase {
+.showcase{
     width: min(100%, 1400px);
     display: flex;
     flex-wrap: wrap;
@@ -25,7 +25,7 @@
     cursor: pointer;
 }
 
-#showcase picture {
+.showcase picture {
     display: flex;
     position: absolute;
     top: 0;
@@ -35,7 +35,7 @@
     transition: 500ms;
 }
 
-#showcase picture img {
+.showcase picture img {
     display: block;
     height: auto;
     width: 100%;

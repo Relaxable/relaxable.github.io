@@ -6,33 +6,35 @@
     font-weight: bold;
 }
 
-h1{
+h1 {
     font-weight: var(--font-weight);
     font-size: 48px;
     margin: 64px 0;
 }
 
-h2, h3{
+h2, h3 {
     grid-column: 1 / 3;
     margin: 0;
     padding-left: 18px;
     font-weight: var(--font-weight);
 }
 
-h3{
+h3 {
     margin-bottom: 18px;
     color: #9E9E9E;
 }
 
-h3 span{
+h3 span {
     color: white;
 }
 
-#showcase {
+.showcase {
     display: grid;
     grid-template-rows: repeat(2, auto);
     grid-template-columns: repeat(2, var(--pricing-dimensions));
     justify-content: center;
+
+    margin-bottom: 80px;
 }
 
 .picture-container {
@@ -50,7 +52,7 @@ h3 span{
     cursor: pointer;
 }
 
-#showcase picture {
+.showcase picture {
     display: flex;
     position: absolute;
     top: 0;
@@ -60,7 +62,7 @@ h3 span{
     transition: 500ms;
 }
 
-#showcase picture img {
+.showcase picture img {
     display: block;
     height: auto;
     width: 100%;
