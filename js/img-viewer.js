@@ -38,7 +38,7 @@ class ImgViewer {
 $(function () {
 
     let imgCount = $(".showcase .picture-container").length;
-    let vi = new ImgViewer($("#showcase"), $(".picture-container"), imgCount);
+    let vi = new ImgViewer($(".showcase"), $(".picture-container"), imgCount);
 
     $('.picture-container').on("click", function () {
         let i = $(this).parent().find($('.picture-container')).index(this);
