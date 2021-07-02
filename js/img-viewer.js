@@ -1,11 +1,11 @@
 class ImgViewer {
-    constructor(container, pictureContainer, imgCount) {
-        this._container = container;
+    constructor(pictureContainer) {
         this._pictureContainer = pictureContainer;
-        this._imgCount = imgCount;
     }
 
-    show(selIndex) {
+    show(container, selIndex) {
+        this._container = container;
+        this._imgCount = container.children(".picture-container").length
         this._selIndex = selIndex;
         this._showImage()
         $("#img-viewer").addClass("img-viewer-visible");
@@ -37,12 +37,12 @@ class ImgViewer {
 
 $(function () {
 
-    let imgCount = $(".showcase .picture-container").length;
-    let vi = new ImgViewer($(".showcase"), $(".picture-container"), imgCount);
+    let vi = new ImgViewer($(".picture-container"));
 
     $('.picture-container').on("click", function () {
-        let i = $(this).parent().find($('.picture-container')).index(this);
-        vi.show(i);
+        let c = $(this).parent()
+        let i = $(c).find($('.picture-container')).index(this);
+        vi.show(c, i);
     });
 
     $('#iv-back').on("click", function () {
