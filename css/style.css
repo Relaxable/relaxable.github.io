@@ -36,7 +36,7 @@ a {
 main {
     display: grid;
     justify-items: center;
-    padding-top: min(32vmin, 160px);
+    padding-top: calc(var(--nav-margin) * 8);
 }
 
 * {
@@ -46,7 +46,7 @@ main {
 h1 {
     font-weight: var(--font-weight);
     font-size: 48px;
-    margin:  64px 0 calc(64px + var(--nav-margin)) 0;
+    margin: 64px 0 calc(64px + var(--nav-margin)) 0;
 }
 
 h2 {
