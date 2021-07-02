@@ -1,10 +1,10 @@
 var prevWidth;
 
 $(function () {
-    $('.art-wall').imagesLoaded(function () {
+    $('.showcase').imagesLoaded(function () {
 
         let i = 0;
-        $('.art-wall').children('.art').each(function () {
+        $('.showcase').children('.picture-container').each(function () {
             $(this).css({"animation-delay": i * 100 + "ms"});
             i++;
         });
@@ -12,7 +12,7 @@ $(function () {
         //sleepFor(10000);
 
         $('.loading').css({"display": "none"});
-        $('.art-wall').css({"display": "block"});
+        $('.showcase').css({"display": "block"});
 
         initMasonry();
 
@@ -31,8 +31,8 @@ function sleepFor(sleepDuration) {
 }
 
 function initMasonry() {
-    $('.art-wall').masonry({
-        itemSelector: '.art',
+    $('.showcase').masonry({
+        itemSelector: '.picture-container',
         gutter: 0,
         fitWidth: true,
         isResizeBound: false
@@ -42,8 +42,8 @@ function initMasonry() {
 
 function redoMasonry() {
     if (prevWidth != window.innerWidth) {
-        $('.art-wall').masonry('destroy');
-        $('.art-wall').removeData('masonry');
+        $('.showcase').masonry('destroy');
+        $('.showcase').removeData('masonry');
         initMasonry();
     }
 }

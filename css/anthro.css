@@ -25,24 +25,37 @@ html, body {
     animation-iteration-count: infinite;
 }
 
-.art-wall {
+.showcase {
     position: relative;
     display: none;
     width: 100%;
 }
 
-.art {
+.picture-container {
     opacity: 0;
     font-size: 0;
     width: min(50%, 400px);
+    overflow: hidden;
 
     animation-name: ShowArtWall;
     animation-fill-mode: both;
     animation-duration: 1000ms;
 }
 
-.art picture, .art picture img {
+.picture-container picture, .picture-container picture img {
     width: 100%;
+    transition: 500ms;
+}
+
+.picture-container:hover picture, .picture-container:hover img {
+    transform: scale(1.08);
+    cursor: pointer;
+}
+
+@-moz-document url-prefix(){
+    .picture-container:hover picture, .picture-container:hover img {
+        filter: blur(0.1px); /* Firefox fix */
+    }
 }
 
 @keyframes RotateLoadingIcon {
