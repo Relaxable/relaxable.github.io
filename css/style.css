@@ -31,7 +31,6 @@ html, body {
 
 a {
     color: white;
-    text-decoration: none;
 }
 
 main {
@@ -42,6 +41,12 @@ main {
 
 * {
     box-sizing: border-box;
+}
+
+h1 {
+    font-weight: var(--font-weight);
+    font-size: 48px;
+    margin:  64px 0 calc(64px + var(--nav-margin)) 0;
 }
 
 h2 {
@@ -206,6 +211,7 @@ nav header img {
     padding: 14px 32px;
     font-size: 18px;
     color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
     transition: 1000ms;
 
     animation-name: menuItem;
