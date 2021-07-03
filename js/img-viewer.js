@@ -54,7 +54,10 @@ $(function () {
     });
 
     $('#img-viewer').on("click", function (e) {
-        if ($(e.target).is($("#iv-image").children("img"))) return;
+        if ($(e.target).is($("#iv-image").children("img"))) {
+            $("#iv-container").toggleClass("iv-hide");
+            return;
+        }
         if ($(e.target).is($(".iv-button"))) return;
         if ($(e.target).is($(".iv-button").children("img"))) return;
         vi.hide();
