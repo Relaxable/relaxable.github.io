@@ -42,6 +42,7 @@ $(function () {
     $('.picture-container').on("click", function () {
         let c = $(this).parent()
         let i = $(c).find($('.picture-container')).index(this);
+        $("html").css({"overflow-y" : "hidden"});
         vi.show(c, i);
     });
 
@@ -60,6 +61,7 @@ $(function () {
         }
         if ($(e.target).is($(".iv-button"))) return;
         if ($(e.target).is($(".iv-button").children("img"))) return;
+        $("html").css({"overflow-y" : "unset"});
         vi.hide();
     });
 });
