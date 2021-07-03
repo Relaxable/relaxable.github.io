@@ -401,10 +401,6 @@ nav header img {
 
 /*#region Follow*/
 
-#follow {
-    padding-bottom: 30px;
-}
-
 #follow a {
     position: relative;
     display: inline-block;
@@ -438,6 +434,15 @@ nav header img {
 
 #follow a:nth-child(4) img {
     transform: scale(0.62);
+}
+
+/*#endregion*/
+
+/*#region Footer*/
+
+footer {
+    padding: 72px 24px 24px 24px;
+    text-align: center;
 }
 
 /*#endregion*/
