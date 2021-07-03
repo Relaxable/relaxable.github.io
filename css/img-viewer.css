@@ -114,9 +114,11 @@
     transform: scale(0.5);
 }
 
-#iv-back:hover > img, #iv-forward:hover > img, #iv-close:hover > img {
-    opacity: 1;
-    transition: 150ms;
+@media not all and (hover: none) { /* only desktop devices */
+    #iv-back:hover > img, #iv-forward:hover > img, #iv-close:hover > img {
+        opacity: 1;
+        transition: 150ms;
+    }
 }
 
 #iv-forward img {
