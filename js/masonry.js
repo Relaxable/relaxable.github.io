@@ -1,34 +1,24 @@
 var prevWidth;
 
-$(function () {
-    $('.showcase').imagesLoaded(function () {
+$(window).on("load", function () {
 
-        let i = 0;
-        $('.showcase').children('.picture-container').each(function () {
-            $(this).css({"animation-delay": i * 100 + "ms"});
-            i++;
-        });
-
-        //sleepFor(10000);
-
-        $('.loading').css({"display": "none"});
-        $('.showcase').css({"display": "block"});
-
-        initMasonry();
-
-        var tout;
-        window.onresize = function () {
-            clearTimeout(tout);
-            tout = setTimeout(redoMasonry, 200);
-        };
+    let i = 0;
+    $('.showcase').children('.picture-container').each(function () {
+        $(this).css({"animation-delay": i * 100 + "ms"});
+        i++;
     });
-});
 
-function sleepFor(sleepDuration) {
-    var now = new Date().getTime();
-    while (new Date().getTime() < now + sleepDuration) { /* do nothing */
-    }
-}
+    $('.loading').css({"display": "none"});
+    $('.showcase').css({"display": "block"});
+
+    initMasonry();
+
+    var tout;
+    window.onresize = function () {
+        clearTimeout(tout);
+        tout = setTimeout(redoMasonry, 200);
+    };
+});
 
 function initMasonry() {
     $('.showcase').masonry({
