@@ -88,6 +88,6 @@ ol li:first-child {
 
 #disclaimer {
     width: min(calc(100% - var(--nav-margin) * 2), 500px);
-    margin-bottom: var(--showcase-margin);
+    margin-bottom: calc(var(--showcase-margin) / 2);
     text-align: justify;
 }

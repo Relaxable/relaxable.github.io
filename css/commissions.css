@@ -1,0 +1,13 @@
+#nav-commissions {
+    font-weight: bold;
+}
+
+section {
+    text-align: justify;
+    max-width: min(80vw, 600px);
+}
+
+h4 {
+    padding-bottom: 0;
+    margin-bottom: 12px;
+}
